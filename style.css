@@ -30,7 +30,6 @@ h1 {
     min-width: 200px;
     min-height: 200px;
     border:2px solid green;
-    background-color: rgba(0, 0, 0, 0.72);
 }
 
 .circleTime {
@@ -39,6 +38,7 @@ h1 {
     align-items: center;
     border:2px solid rgb(30, 117, 1);
     outline: 10px solid rgb(127, 225, 127);
+    background-color: rgba(0, 0, 0, 0.72);
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -47,8 +47,16 @@ h1 {
     width: 60px;
     border:2px solid green;
 }
+.buttons {
+    display: flex;
+    gap:5px;
+    height: 20px;
+}
 [id^="buttonTimer"] {
   border: 2px solid green;
+  width: 35px;
+  height: 20px;
+  padding-bottom: 18px;
 }
 
 /* .stopWotch{
