@@ -3,6 +3,10 @@ const startTimer = document.getElementById('buttonTimerStart');
 const pauseTimer = document.getElementById('buttonTimerPause');
 const stopTimer = document.getElementById('buttonTimerStop');
 const sound1 = document.querySelector('.sound1');
+const imgTimer = document.getElementById('imgTimer');
+
+
+
 
 in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`;
 let timerSetInt;
@@ -35,10 +39,7 @@ startTimer.addEventListener('click', (e) => {
                     } else {
                         clearInterval(timerSetInt);
                         sound1.play();
-                        setTimeout(() => {
-                            sound1.pause();
-                        }, 10000)
-
+                        imgTimer.style.display = 'block';
                     }
                 }
             }
@@ -58,4 +59,7 @@ pauseTimer.addEventListener('click', (e) => {
 stopTimer.addEventListener('click', (e) => {
     clearInterval(timerSetInt);
     in_Out_Timer.value = ``;
+    sound1.load();
+    imgTimer.style.display = 'none';
+    textClickTimer.style.display = 'none';
 })
