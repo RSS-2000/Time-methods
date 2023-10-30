@@ -9,6 +9,7 @@ body {
 
 h1 {
     text-align: center;
+    color:white;
 }
 .container {
     display:flex;
@@ -25,10 +26,11 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:5px;
+    gap:15px;
     min-width: 200px;
     min-height: 200px;
     border:2px solid green;
+    background-color: rgba(0, 0, 0, 0.72);
 }
 
 .circleTime {
@@ -36,6 +38,7 @@ h1 {
     justify-content: center;
     align-items: center;
     border:2px solid rgb(30, 117, 1);
+    outline: 10px solid rgb(127, 225, 127);
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -44,11 +47,11 @@ h1 {
     width: 60px;
     border:2px solid green;
 }
-#buttonTimer {
+[id^="buttonTimer"] {
   border: 2px solid green;
 }
 
-.stopWotch{
+/* .stopWotch{
     flex: 0 0 30%;
     display: flex;
     justify-content: center;
@@ -66,7 +69,7 @@ h1 {
     min-width: 200px;
     min-height: 200px;
     border:2px solid rgb(1, 18, 251);
-}
+} */
 
 
 .circleWotch {
