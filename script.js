@@ -4,7 +4,7 @@ const pauseTimer = document.getElementById('buttonTimerPause');
 const stopTimer = document.getElementById('buttonTimerStop');
 const sound1 = document.querySelector('.sound1');
 
-in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`
+in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`;
 let timerSetInt;
 startTimer.addEventListener('click', (e) => {
     let timerInArr = in_Out_Timer.value.split(':');
