@@ -25,7 +25,11 @@ startTimer.addEventListener('click', (e) => {
                         second = 59;
                     } else {
                         clearInterval(timerSetInt);
-                        sound1.play()
+                        sound1.play();
+                        setTimeout(()=>{
+                            sound1.pause();
+                        },10000)
+                        
                     }
                 }
             }
