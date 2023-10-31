@@ -11,6 +11,7 @@ html {
 h1 {
     text-align: center;
     color:white;
+    text-shadow: 1px 2px 5px black;
 }
 .container {
     display:flex;
@@ -19,7 +20,6 @@ h1 {
     width: 100%;
     height: 100%;
     gap:5px;
-    border: 2px solid rgb(2, 2, 2);
 }
 .timer {
     flex: 0 0 30%;
@@ -30,7 +30,6 @@ h1 {
     gap:15px;
     min-width: 200px;
     min-height: 200px;
-    border:2px solid green;
 }
 
 .timer > p {
@@ -47,6 +46,7 @@ h1 {
     border:2px solid rgb(30, 117, 1);
     outline: 10px solid rgb(127, 225, 127);
     background-color: rgba(0, 0, 0, 0.488);
+    box-shadow: 0 0 10px 10px black;
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -81,36 +81,135 @@ h1 {
   padding-bottom: 18px;
 }
 
+
+/* stopwotch*/
 .stopWotch{
     flex: 0 0 30%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:15px;
     min-width: 200px;
     min-height: 200px;
-    border:2px solid rgb(251, 55, 1);
 }
+.circleWatch {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:2px solid red;
+    outline: 10px solid rgb(225, 137, 127);
+    background-color: rgba(0, 0, 0, 0.488);
+    box-shadow: 0 0 10px 10px black;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#in_Out_stopWatch {
+    text-align: center;
+    width: 98px;
+    border:2px solid rgb(237, 49, 106);
+    color:rgb(193, 30, 1);
+}
+
+.stopWotch > p {
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+    margin-bottom: 5px;
+}
+
+.buttonsWatch {
+    display: flex;
+    gap:5px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+[id^="buttonWatch"] {
+  border: 2px solid rgb(234, 108, 97);
+  border-radius: 10px;
+  width: 45px;
+  height: 20px;
+  padding-bottom: 18px;
+}
+
+
+
+
+
+/* Alarm clock*/
 
 .alarmClock {
     flex: 0 0 30%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:15px;
     min-width: 200px;
     min-height: 200px;
-    border:2px solid rgb(1, 18, 251);
 }
 
-
-.circleWotch {
-    border:2px solid red;
+.circleAlarm {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border:2px solid rgb(11, 1, 117);
+    outline: 10px solid rgb(80, 98, 216);
+    background-color: rgba(0, 0, 0, 0.488);
+    box-shadow: 0 0 10px 10px black;
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    overflow: hidden;
 }
-.circleClock {
-    border:2px solid rgb(25, 0, 255);
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
+
+.alrmImg > .imgOn {
+    position: absolute;
+    display: none;
+    left: 45%;
+    top:25px;
+}
+.alrmImg > .imgOff {
+    position: absolute;
+    left: 45%;
+    top:25px;
+}
+.alrmImg > .imgAlarm {
+    position: absolute;
+    display: none;
+    left: 45%;
+    top:25px;
+}
+#in_Out_Alarm {
+    text-align: center;
+    width: 68px;
+    border:2px solid rgb(0, 28, 128);
+    color:rgb(193, 30, 1);
+}
+
+.alarmClock > p {
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px black;
+    margin-bottom: 5px;
+}
+
+.buttonsAlarm {
+    display: flex;
+    gap:5px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+[id^="buttonAlarm"] {
+  border: 2px solid rgb(47, 77, 248);
+  border-radius: 10px;
+  width: 35px;
+  height: 20px;
+  padding-bottom: 18px;
 }

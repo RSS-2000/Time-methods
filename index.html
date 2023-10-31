@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>stopwatch, timer, alarm clock </h1>
+    <h1>Programs for time </h1>
     <div class="container">
         <div class="timer">
             <p>Timer</p>
@@ -21,13 +21,41 @@
                 <button type="button" id="buttonTimerStop">&#9632</button>
             </div>
         </div>
+
+
+        
         <div class="stopWotch">
-            <div class="circleWotch"></div>
+            <p>Stopwatch</p>
+            <div class="circleWatch">
+                <input type="text" name="stopwatch" id="in_Out_stopWatch" value ="00:00:00:0000">
+            </div>
+            <div class="buttonsWatch">
+                <button type="button" id="buttonWatchStart">Start</button>
+                <button type="button" id="buttonWatchStop">Stop</button>
+                <button type="button" id="buttonWatchReset">Reset</button>
+            </div>
         </div>
+
+
+
+
         <div class="alarmClock">
-            <div class="circleClock"></div>
+             <p>alarm clock</p>
+            <div class="circleAlarm">
+                <div class="alrmImg">
+                    <span class="imgOn">&#128276;</span>
+                    <span class="imgOff">&#128277;</span>
+                    <span class="imgAlarm">&#9200;</span>
+                </div>
+                <input type="text" name="alarm" id="in_Out_Alarm" placeholder="10:00:00">
+            </div>
+            <div class="buttonsAlarm">
+                <button type="button" id="buttonAlarmOn">On</button>
+                <button type="button" id="buttonAlarmOff">Off</button>
+            </div>
         </div>
         <audio src="./sound/682bc8991873584.mp3" class="sound1"></audio>
+        <audio src="./sound/budilnik.mp3" class="sound2"></audio>
     </div>
     <script src="./script.js"></script>
 </body>
