@@ -5,12 +5,16 @@ const stopTimer = document.getElementById('buttonTimerStop');
 const sound1 = document.querySelector('.sound1');
 const imgTimer = document.getElementById('imgTimer');
 
-in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`;
+if (localStorage.getItem('hour')) {
+    in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`;
+}
+let startOnOff = true;
+let pauseOnOff = true;
 let timerSetInt;
 startTimer.addEventListener('click', (e) => {
     let timerInArr = in_Out_Timer.value.split(':');
     let inputValid = /^\d{2}:\d{2}:\d{2}$/.test(in_Out_Timer.value);
-    if (inputValid) {
+    if (inputValid && startOnOff && pauseOnOff) {
         localStorage.setItem('hour', timerInArr[0]);
         localStorage.setItem('minute', timerInArr[1]);
         localStorage.setItem('second', timerInArr[2]);
@@ -19,43 +23,51 @@ startTimer.addEventListener('click', (e) => {
     let hourTimer = +localStorage.getItem('hour');
     let minuteTimer = +localStorage.getItem('minute');
     let secondTimer = +localStorage.getItem('second');
-
-    if (!isNaN(hourTimer) && !isNaN(minuteTimer) && !isNaN(secondTimer)) {
-        timerSetInt = setInterval(() => {
-            if (secondTimer > 0) {
-                secondTimer--;
-            } else {
-                if (minuteTimer > 0) {
-                    minuteTimer--;
-                    secondTimer = 59;
+    if (startOnOff) {
+        if (!isNaN(hourTimer) && !isNaN(minuteTimer) && !isNaN(secondTimer) && hourTimer || minuteTimer || secondTimer !== 0) {
+            startOnOff = false;
+            timerSetInt = setInterval(() => {
+                if (secondTimer > 0) {
+                    secondTimer--;
                 } else {
-                    if (hourTimer > 0) {
-                        hourTimer--;
-                        minuteTimer = 59;
+                    if (minuteTimer > 0) {
+                        minuteTimer--;
                         secondTimer = 59;
                     } else {
-                        clearInterval(timerSetInt);
-                        sound1.play();
-                        imgTimer.style.display = 'block';
+                        if (hourTimer > 0) {
+                            hourTimer--;
+                            minuteTimer = 59;
+                            secondTimer = 59;
+                        } else {
+                            clearInterval(timerSetInt);
+                            sound1.play();
+                            imgTimer.style.display = 'block';
+                        }
                     }
                 }
-            }
-            const formatHour = String(hourTimer).padStart(2, '0');
-            const formatMinute = String(minuteTimer).padStart(2, '0');
-            const formatSecond = String(secondTimer).padStart(2, '0');
-            in_Out_Timer.value = `${formatHour}:${formatMinute}:${formatSecond}`;
-        }, 1000)
-    }
+                const formatHour = String(hourTimer).padStart(2, '0');
+                const formatMinute = String(minuteTimer).padStart(2, '0');
+                const formatSecond = String(secondTimer).padStart(2, '0');
+                in_Out_Timer.value = `${formatHour}:${formatMinute}:${formatSecond}`;
+            }, 1000)
+        }
 
+    }
 });
 
 pauseTimer.addEventListener('click', (e) => {
     clearInterval(timerSetInt);
+    pauseOnOff = false;
+    startOnOff = true;
 });
 
 stopTimer.addEventListener('click', (e) => {
+    startOnOff = true;
     clearInterval(timerSetInt);
     in_Out_Timer.value = ``;
+    if (localStorage.getItem('hour')) {
+        in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`;
+    }
     sound1.load();
     imgTimer.style.display = 'none';
     textClickTimer.style.display = 'none';

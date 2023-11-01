@@ -82,7 +82,7 @@ h1 {
     display: flex;
     gap: 5px;
     height: 20px;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 [id^="buttonTimer"] {
@@ -139,7 +139,7 @@ h1 {
     display: flex;
     gap: 5px;
     height: 20px;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 [id^="buttonWatch"] {
@@ -216,7 +216,7 @@ h1 {
     display: flex;
     gap: 5px;
     height: 20px;
-    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 [id^="buttonAlarm"] {
