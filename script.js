@@ -9,12 +9,11 @@ if (localStorage.getItem('hour')) {
     in_Out_Timer.placeholder = `${localStorage.getItem('hour')}:${localStorage.getItem('minute')}:${localStorage.getItem('second')}`;
 }
 let startOnOff = true;
-let pauseOnOff = true;
 let timerSetInt;
 startTimer.addEventListener('click', (e) => {
     let timerInArr = in_Out_Timer.value.split(':');
     let inputValid = /^\d{2}:\d{2}:\d{2}$/.test(in_Out_Timer.value);
-    if (inputValid && startOnOff && pauseOnOff) {
+    if (inputValid && startOnOff) {
         localStorage.setItem('hour', timerInArr[0]);
         localStorage.setItem('minute', timerInArr[1]);
         localStorage.setItem('second', timerInArr[2]);
@@ -57,7 +56,6 @@ startTimer.addEventListener('click', (e) => {
 
 pauseTimer.addEventListener('click', (e) => {
     clearInterval(timerSetInt);
-    pauseOnOff = false;
     startOnOff = true;
 });
 
