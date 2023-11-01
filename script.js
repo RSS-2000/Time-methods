@@ -14,7 +14,7 @@ startTimer.addEventListener('click', (e) => {
         localStorage.setItem('hour', timerInArr[0]);
         localStorage.setItem('minute', timerInArr[1]);
         localStorage.setItem('second', timerInArr[2]);
-    }
+    };
 
     let hourTimer = +localStorage.getItem('hour');
     let minuteTimer = +localStorage.getItem('minute');
@@ -59,9 +59,8 @@ stopTimer.addEventListener('click', (e) => {
     sound1.load();
     imgTimer.style.display = 'none';
     textClickTimer.style.display = 'none';
-})
+});
 
-//alarm clock
 const in_Out_Alarm = document.getElementById('in_Out_Alarm');
 const btnAlarmOn = document.getElementById('buttonAlarmOn');
 const btnAlarmOff = document.getElementById('buttonAlarmOff');
@@ -111,10 +110,8 @@ btnAlarmOn.addEventListener('click', (e) => {
         imgOffAlarm.style.display = 'block';
         imgAlarm.style.display = 'none';
     })
-})
+});
 
-
-//stopwatch
 const buttonWatchStart = document.getElementById('buttonWatchStart');
 const buttonWatchStop = document.getElementById('buttonWatchStop');
 const buttonWatchReset = document.getElementById('buttonWatchReset');
@@ -129,8 +126,8 @@ buttonWatchStart.addEventListener('click', (even) => {
     if (indWatch) {
         stopwatch = setInterval(() => {
             indWatch = false;
-            milisecondWatch += 1;
-            if (milisecondWatch === 999) {
+            milisecondWatch += 10;
+            if (milisecondWatch === 1000) {
                 milisecondWatch = 0;
                 secondWatch += 1;
                 if (secondWatch === 59) {
@@ -144,7 +141,7 @@ buttonWatchStart.addEventListener('click', (even) => {
             }
             const outWatch = `${String(hourWatch).padStart(2, '0')}:${String(minuteWatch).padStart(2, '0')}:${String(secondWatch).padStart(2, '0')}:${String(milisecondWatch).padStart(3, '00')}`;
             in_Out_stopWatch.value = outWatch;
-        }, 1)
+        }, 10)
     }
 
 });
@@ -159,3 +156,4 @@ buttonWatchReset.addEventListener('click', (even) => {
     in_Out_stopWatch.value = '00:00:00:0000';
     indWatch = true;
 })
+

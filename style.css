@@ -1,49 +1,58 @@
-*{
-  box-sizing: border-box;
-}
-html {
- width: 100%;
- height: 100%;
-  background-image: linear-gradient(45deg, rgba(0, 0, 255, 0.624), rgba(255, 255, 0, 0.53), rgba(255, 0, 0, 0.661));
+* {
+    box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgba(0, 0, 255, 0.624), rgba(255, 255, 0, 0.53), rgba(255, 0, 0, 0.661));
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
 
 h1 {
     text-align: center;
-    color:white;
+    color: white;
     text-shadow: 1px 2px 5px black;
+    margin-bottom: 70px;
 }
+
 .container {
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    gap:5px;
+    width: 95%;
+    gap: 5px;
 }
+
 .timer {
     flex: 0 0 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:15px;
+    gap: 15px;
     min-width: 200px;
     min-height: 200px;
 }
 
-.timer > p {
-    color:rgb(255, 255, 255);
+.timer>p {
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    text-shadow: 1px 1px 3px black;
+    font-size: 22px;
+    text-shadow: 1px 1px 3px rgb(16, 138, 0);
     margin-bottom: 5px;
 }
+
 .circleTime {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border:2px solid rgb(30, 117, 1);
+    border: 2px solid rgb(30, 117, 1);
     outline: 10px solid rgb(127, 225, 127);
     background-color: rgba(0, 0, 0, 0.488);
     box-shadow: 0 0 10px 10px black;
@@ -52,10 +61,11 @@ h1 {
     height: 150px;
     overflow: hidden;
 }
-.circleTime > img {
+
+.circleTime>img {
     position: absolute;
     display: none;
-    top:-15px;
+    top: -15px;
     width: 165px;
     height: 165px;
     cursor: pointer;
@@ -64,42 +74,44 @@ h1 {
 #in_Out_Timer {
     text-align: center;
     width: 68px;
-    border:2px solid green;
-    color:rgb(193, 30, 1);
+    border: 2px solid green;
+    color: rgb(193, 30, 1);
 }
+
 .buttons {
     display: flex;
-    gap:5px;
+    gap: 5px;
     height: 20px;
     margin-bottom: 10px;
 }
+
 [id^="buttonTimer"] {
-  border: 2px solid green;
-  border-radius: 10px;
-  width: 35px;
-  height: 20px;
-  padding-bottom: 18px;
+    border: 2px solid green;
+    box-shadow: 0 0 5px green;
+    border-radius: 10px;
+    width: 35px;
+    height: 20px;
+    padding-bottom: 18px;
 }
 
-
-/* stopwotch*/
-.stopWotch{
+.stopWotch {
     flex: 0 0 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:15px;
+    gap: 15px;
     min-width: 200px;
     min-height: 200px;
 }
+
 .circleWatch {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:2px solid red;
+    border: 2px solid red;
     outline: 10px solid rgb(225, 137, 127);
     background-color: rgba(0, 0, 0, 0.488);
     box-shadow: 0 0 10px 10px black;
@@ -111,36 +123,32 @@ h1 {
 #in_Out_stopWatch {
     text-align: center;
     width: 98px;
-    border:2px solid rgb(237, 49, 106);
-    color:rgb(193, 30, 1);
+    border: 2px solid rgb(237, 49, 106);
+    color: rgb(193, 30, 1);
 }
 
-.stopWotch > p {
-    color:rgb(255, 255, 255);
+.stopWotch>p {
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    text-shadow: 1px 1px 3px black;
+    font-size: 22px;
+    text-shadow: 1px 1px 3px rgb(146, 0, 0);
     margin-bottom: 5px;
 }
 
 .buttonsWatch {
     display: flex;
-    gap:5px;
+    gap: 5px;
     height: 20px;
     margin-bottom: 10px;
 }
+
 [id^="buttonWatch"] {
-  border: 2px solid rgb(234, 108, 97);
-  border-radius: 10px;
-  width: 45px;
-  height: 20px;
-  padding-bottom: 18px;
+    border: 2px solid rgb(234, 108, 97);
+    box-shadow: 0 0 10px rgb(243, 114, 114);
+    border-radius: 10px;
+    width: 50px;
+    height: 20px;
 }
-
-
-
-
-
-/* Alarm clock*/
 
 .alarmClock {
     flex: 0 0 30%;
@@ -148,7 +156,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:15px;
+    gap: 15px;
     min-width: 200px;
     min-height: 200px;
 }
@@ -159,7 +167,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border:2px solid rgb(11, 1, 117);
+    border: 2px solid rgb(11, 1, 117);
     outline: 10px solid rgb(80, 98, 216);
     background-color: rgba(0, 0, 0, 0.488);
     box-shadow: 0 0 10px 10px black;
@@ -169,47 +177,58 @@ h1 {
     overflow: hidden;
 }
 
-.alrmImg > .imgOn {
+.alrmImg>.imgOn {
     position: absolute;
     display: none;
     left: 45%;
-    top:25px;
+    top: 25px;
 }
-.alrmImg > .imgOff {
+
+.alrmImg>.imgOff {
     position: absolute;
     left: 45%;
-    top:25px;
+    top: 25px;
 }
-.alrmImg > .imgAlarm {
+
+.alrmImg>.imgAlarm {
     position: absolute;
     display: none;
     left: 45%;
-    top:25px;
+    top: 25px;
 }
+
 #in_Out_Alarm {
     text-align: center;
     width: 68px;
-    border:2px solid rgb(0, 28, 128);
-    color:rgb(193, 30, 1);
+    border: 2px solid rgb(0, 28, 128);
+    color: rgb(193, 30, 1);
 }
 
-.alarmClock > p {
-    color:rgb(255, 255, 255);
+.alarmClock>p {
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    text-shadow: 1px 1px 3px black;
+    font-size: 22px;
+    text-shadow: 1px 1px 3px rgb(0, 2, 147);
     margin-bottom: 5px;
 }
 
 .buttonsAlarm {
     display: flex;
-    gap:5px;
+    gap: 5px;
     height: 20px;
     margin-bottom: 10px;
 }
+
 [id^="buttonAlarm"] {
-  border: 2px solid rgb(47, 77, 248);
-  border-radius: 10px;
-  width: 35px;
-  height: 20px;
-  padding-bottom: 18px;
+    border: 2px solid rgb(47, 77, 248);
+    box-shadow: 0 0 5px rgb(2, 0, 128);
+    border-radius: 10px;
+    width: 35px;
+    height: 20px;
+}
+
+@media (max-width:462px) {
+    body {
+        height: 100%;
+    }
 }
