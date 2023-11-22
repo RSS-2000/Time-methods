@@ -7,5 +7,5 @@
 > - alarm clock
 ---
 **Site:**
-https://rss-2000.github.io/Time-methods/
+https://rss-777.github.io/Time-methods/
 
